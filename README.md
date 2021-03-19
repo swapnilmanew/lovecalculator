@@ -1,1 +1,4 @@
 # lovecalculator
+
+Created for fun...
+
