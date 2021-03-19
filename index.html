@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-2/css/all.min.css"
+        integrity="sha512-61a6zi50gYXGgd/n9+ZT2/RKnXr6lkRoWlS88AjFdoUHaIDnyBAcoE0Vs/QDU3lK3nCcUowNDqmQ8WaV0yT4qw=="
+        crossorigin="anonymous" />
+    <!-- Favicon  -->
+    <link rel="shortcut icon" href="download.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Love Calculator By Swapnil Mane</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .love {
+            color: rgb(224, 42, 118);
+        }
+
+        .love-btn {
+            background: rgb(224, 42, 118);
+        }
+
+        textarea:focus,
+        textarea.form-control:focus,
+        input.form-control:focus,
+        input[type=text]:focus,
+        input[type=password]:focus,
+        input[type=email]:focus,
+        input[type=number]:focus,
+        [type=text].form-control:focus,
+        [type=password].form-control:focus,
+        [type=email].form-control:focus,
+        [type=tel].form-control:focus,
+        [contenteditable].form-control:focus {
+            box-shadow: inset 0 -1px 0 #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container mt-3">
+        <h1 class="fw-bold display-4 text-center my-5">Calculate your <span class="love">Love</span> !!</h1>
+        <div class="row">
+            <div class="col-11 col-sm-8 col-md-6 m-auto hide-on-click">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <p class="text-center"><i class="love fa-2x fas fa-heart"></i></p>
+                        <input type="text" name="" id="name_1" class="form-control mt-2 mb-3" placeholder="Your Name">
+
+                        <input type="text" name="" id="name_2" class="form-control my-2"
+                            placeholder="Your Partner's Name">
+                        <button class="btn love-btn text-white mt-2" id="love">Calculate <i
+                                class="text-white fas fa-heart"></i></button>
+                        <br><br>
+                        <a class="mt-4 text-center" href="https://github.com/swapnilmanew"><i
+                                class="fa-2x love fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-8 col-md-6 m-auto show-on-click d-none mb-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h1 class="fw-bold display-7 text-center my-3">Percentage of love between <br> <span
+                                class="love" id="first"></span> & <span class="love" id="second"></span> <br>is
+                            <span class="per"></span>%... <i class="love fas fa-heart"></i> !!
+                        </h1>
+
+                        <p class="fw-light display-6" id="show_love">Arr <span class="per2 love"></span><span
+                                class="love">%</span> ...Tumchya love ne tr love meterch cross kela...
+                            <i class="far love fa-grin-squint-tears"></i>
+                            <br>
+                            Congratulations !!
+                        </p>
+
+                        <button class="btn love-btn text-white mt-2" id="love2">Calculate <i
+                                class="text-white fas fa-heart"></i> Again</button>
+                        <br><br>
+                        <a class="mt-4 text-center" href="https://github.com/swapnilmanew"><i
+                                class="fa-2x love fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        const button = document.querySelector("#love");
+        const button2 = document.querySelector("#love2");
+
+
+        button.addEventListener("click", () => {
+
+            const f_person = document.querySelector("#name_1").value;
+            const s_person = document.querySelector("#name_2").value;
+
+            if (f_person == "") {
+                alert("Arre, tuz nav taak na...ts ks me calculate kru...TUMCH LOVE");
+            }
+            else if (s_person == "") {
+                alert("Arre, tuzya babu-shona ch nav taak na...ts ks me calculate kru...TUMCH LOVE");
+            }
+            else {
+
+                alert("Mala smjl " + f_person + " ki tuza babu-shona ch naav " + s_person + " aahe te...hahahha");
+                alert("Arre " + f_person + " serious nko hous... ts kahi nahi... I was just kidding...Press Ok ");
+
+                document.querySelector(".hide-on-click").classList.add("d-none");
+                document.querySelector(".show-on-click").classList.remove("d-none");
+
+                const love = Math.floor((Math.random() + 10) * 10);
+                document.querySelector(".per").innerHTML = love;
+                document.querySelector(".per2").innerHTML = love;
+                document.querySelector("#first").innerHTML = f_person;
+                document.querySelector("#second").innerHTML = s_person;
+
+                if (love > 100) {
+                    document.querySelector("#show_love").classList.remove("d-none");
+                }
+            }
+        });
+        button2.addEventListener("click", () => {
+
+            document.querySelector(".hide-on-click").classList.remove("d-none");
+            document.querySelector(".form-control").value = "";
+            document.querySelector(".show-on-click").classList.add("d-none");
+            document.querySelector("#name_1").value = "";
+            document.querySelector("#name_2").value = "";
+        });
+    </script>
+</body>
+
+</html>
